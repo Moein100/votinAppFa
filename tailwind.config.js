@@ -12,9 +12,9 @@ module.exports = {
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-            },
+            // fontFamily: {
+            //     sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            // },
         },
     },
 

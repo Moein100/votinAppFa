@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Sahel;
+    src: url(../fonts/Sahel.ttf);
+    src: url(../fonts/Sahel.woff);
+    src: url(../fonts/Sahel.eot);
+  }
+  
+  html 
+  {
+      font-family: Sahel !important;
+  }

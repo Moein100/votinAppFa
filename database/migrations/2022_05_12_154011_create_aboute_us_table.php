@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('aboute_us', function (Blueprint $table) {
             $table->id();
             $table->text('body');
-            $table->string('links');
+            $table->string('links')->nullable();
             $table->timestamps();
         });
     }

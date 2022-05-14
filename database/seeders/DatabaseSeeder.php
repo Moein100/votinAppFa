@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AbouteUs;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Idea;
@@ -30,7 +31,11 @@ class DatabaseSeeder extends Seeder
                 'remember_token' => Str::random(10),
             ]);
         \App\Models\User::factory(19)->create();
-        Category::factory(4)->create();
+        // Category::factory(4)->create();
+        Category::factory()->create(['name' => 'عمومی']);
+        Category::factory()->create(['name' => 'دانشگاه']);
+        Category::factory()->create(['name' => 'علمی']);
+        Category::factory()->create(['name' => 'آگهی']);
         Status::factory()->create(['name' => 'Open' ,'name_fa' => 'باز']);
         Status::factory()->create(['name' => 'good','name_fa' => 'خوب']);
         Status::factory()->create(['name' => 'great','name_fa' => 'عالی']);
@@ -61,5 +66,7 @@ class DatabaseSeeder extends Seeder
         {
             Comment::factory(5)->existing()->create(['idea_id' => $idea->id]);
         }
+
+        AbouteUs::factory(1)->create();
     }
 }

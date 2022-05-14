@@ -15,7 +15,11 @@ class AbouteUsController extends Controller
      */
     public function index()
     {
-        return view('AbouteUs.aboute');
+        return view('AbouteUs.aboute',
+        [
+            'body' => AbouteUs::find(1)->body,
+            'links' =>AbouteUs::find(1)->links
+        ]);
     }
 
     /**

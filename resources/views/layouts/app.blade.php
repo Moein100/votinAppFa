@@ -8,7 +8,8 @@
         <title>{{$title ?? "Basu Connections"}}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+        {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"> --}}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
         <!-- Styles -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,7 +22,7 @@
         
 
     </head>
-    <body class="font-sans bg-gray-100 text-gray-900 text-sm" dir="rtl">
+    <body class=" bg-gray-100 text-gray-900 text-sm" dir="rtl">
 
             <!-- Page Heading -->
             <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
@@ -30,6 +31,16 @@
                         
                 
                 <div class="flex items-center mt-2 md:mt-0">
+                    @admin
+                    <div>
+                        <a class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/admin/aboute-us"> ویرایش درباره ما</a>
+                    </div>
+                    @endadmin
+                    
+                    <div>
+                        <a class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/aboute-us">درباره ما</a>
+                    </div>
+                    
                     {{-- <a class="mx-2"href="/aboute-us">
                         درباره ما
                     </a>    --}}
@@ -62,6 +73,7 @@
                             @endif
                         @endauth
                     </div>
+                    
                 @endif
                 @auth
                 <livewire:top-avatar-and-greeting/>

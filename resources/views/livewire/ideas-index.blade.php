@@ -55,7 +55,7 @@
 @empty
     <div class="mx-auto w-70 mt-12 ">
         <div class="text-gray-400 text-center font-bold mt-6">
-            No ideas where found
+            هیچ ایده ای با این عنوان ثبت نشده🤔
         </div>
     </div>
 @endforelse
