@@ -35,6 +35,6 @@ class CheckBasuStudent implements Rule
      */
     public function message()
     {
-        return 'شما باید دانشجوی داشنگاه بوعلی همدان باشید!!';
+        return 'شما باید دانشجوی داشنگاه بوعلی همدان باشید <a href="/aboute-us" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">این لینکو چک کنین</a>';
     }
 }
