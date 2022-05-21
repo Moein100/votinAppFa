@@ -35,7 +35,7 @@
             </svg>
          </label> --}}
          <i class="fa-solid fa-magnifying-glass m-auto -ml-5 z-10"></i>
-        <input wire:model="search" id="search" type="search" placeholder="جست و جوی عنوان" class="w-full placeholder-gray-900 border-none rounded-search  bg-white pr-23px  py-2 ">
+        <input wire:model="search" id="search" type="search" placeholder="جست و جوی عنوان" class="w-full placeholder-gray-900 border-none rounded-search  bg-white pr-33px  py-2 ">
         
         
     </div>

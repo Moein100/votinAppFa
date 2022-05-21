@@ -16,7 +16,7 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->user()->isAdmin() || auth()->guest()) 
+        if (auth()->guest() || !auth()->user()->isAdmin() ) 
         {
             abort(404);
         }

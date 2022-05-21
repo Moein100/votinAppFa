@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AbouteUsAdminController;
 use App\Http\Controllers\AbouteUsController;
+use App\Http\Controllers\AdminAdsController;
 use App\Http\Controllers\IdeaController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,9 @@ Route::get('/ideas/{idea}/{slug?}', [IdeaController::class,'show'])->name('idea.
 Route::get('/aboute-us',[AbouteUsController::class,'index'])->name('aboute.index');
 Route::get('/admin/aboute-us',[AbouteUsAdminController::class,'index'])->name('aboute.admin.index')->middleware('admin');
 Route::post('/admin/aboute-us/edit/{AbouteUs}',[AbouteUsAdminController::class,'update'])->name('aboute.admin.edit')->middleware('admin');
+Route::get('/admin/ads',[AdminAdsController::class,'index'])->name('ads.admin.index')->middleware('admin');
+Route::post('/admin/ads',[AdminAdsController::class,'update'])->name('ads.admin.edit')->middleware('admin');
+
 
 
 require __DIR__.'/auth.php';

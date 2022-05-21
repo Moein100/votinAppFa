@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('idea_id')->constrained('ideas')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('status_id')->constrained('Comments')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('status_id')->constrained('statuses')->cascadeOnDelete()->cascadeOnUpdate();
             $table->text('body');
             $table->integer('spam_reports')->default(0);
             $table->string('image')->nullable()->default(null);

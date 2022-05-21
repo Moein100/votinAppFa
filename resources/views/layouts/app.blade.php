@@ -24,6 +24,11 @@
     </head>
     <body class=" bg-gray-100 text-gray-900 text-sm" dir="rtl">
 
+        <a href="" class="block w-full z-10" target="_blank">
+            <div style="height: 60px;"><img class="w-100" src="https://dkstatics-public.digikala.com/digikala-adservice-banners/7b2648ec542f9e6df7ac644b16c2adf82aad7f19_1651479558.gif" height="60" style="object-fit: cover;">
+            
+            </div>
+        </a>
             <!-- Page Heading -->
             <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
                 
