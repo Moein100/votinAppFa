@@ -23,7 +23,8 @@ Route::get('/aboute-us',[AbouteUsController::class,'index'])->name('aboute.index
 Route::get('/admin/aboute-us',[AbouteUsAdminController::class,'index'])->name('aboute.admin.index')->middleware('admin');
 Route::post('/admin/aboute-us/edit/{AbouteUs}',[AbouteUsAdminController::class,'update'])->name('aboute.admin.edit')->middleware('admin');
 Route::get('/admin/ads',[AdminAdsController::class,'index'])->name('ads.admin.index')->middleware('admin');
-Route::post('/admin/ads',[AdminAdsController::class,'update'])->name('ads.admin.edit')->middleware('admin');
+Route::put('/admin/ads',[AdminAdsController::class,'update'])->name('ads.admin.edit')->middleware('admin');
+Route::delete('/admin/ads',[AdminAdsController::class,'destroy'])->name('ads.admin.delete')->middleware('admin');
 
 
 

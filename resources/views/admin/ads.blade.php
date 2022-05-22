@@ -85,18 +85,21 @@
             <div >
               
               <div class="mt-5 md:mt-0 md:col-span-2">
-                <form action="{{route('ads.admin.edit')}}" method="POST" enctype="multipart/form">
+                  @if($image)
+                  {{-- @dd(strpos($image,'ds/')) --}}
+                  @if(strpos($image,'adsimage'))
+                      <img src="{{asset('/app/'.$image)}}" alt="">
+                  @else
+                  
+                  <img src="{{$image}}" alt="">
+                  @endif    
+                  @endif
+                <form action="{{route('ads.admin.edit')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                   <div class="shadow sm:rounded-md sm:overflow-hidden">
                     <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                       
-                        @if($image)
-                        @if(stripos($image,env('APP_URL')))
-                            <img src="{{asset('/ads/'.$image)}}" alt="">
-                        @else
-                        <img src="{{$image}}" alt="">
-                        @endif    
-                        @endif
                       <div>
                         <label for="image" class="block text-sm font-medium text-gray-700"> عکس </label>
                         <div class="mt-1">
@@ -133,10 +136,18 @@
                     </div>
                   </div>
                 </form>
+
+                
               </div>
             </div>
           </div>
-          
+          <form class="mx-2" action="{{route('ads.admin.delete')}}" method="POST" >
+            @csrf
+            @method('delete')
+            <div class="px-4 py-3 bg-white text-center sm:px-6 w-full rounded-md">
+                <button type="submit" class="inline-flex w-full justify-center my-blue-delete py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">delete</button>
+              </div>
+          </form>  
           
     </main>
 
