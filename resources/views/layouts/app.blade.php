@@ -36,6 +36,9 @@
                     <div>
                         <a class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/admin/aboute-us"> ویرایش درباره ما</a>
                     </div>
+                    <div>
+                        <a class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/admin/ads">تبلیغات</a>
+                    </div>
                     @endadmin
                     
                     <div>

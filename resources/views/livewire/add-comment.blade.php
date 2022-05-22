@@ -80,7 +80,7 @@ class="ml-2"
                             <textarea wire:model.defer="comment" x-ref="comment" name="post_comment" id="" cols="30" rows="4"
                                       class="w-full text-sm bg-gray-200 rounded-xl placeholder-gray-900
                             border-none px-4 py-2"
-                                      placeholder="Go ahead" required></textarea>
+                                      placeholder="کامنت بزارین" required></textarea>
 
                     @error('comment')
                     <p class="text-red-600 tex-xs mt-1">

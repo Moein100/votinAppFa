@@ -61,7 +61,17 @@
 @endforelse
 
 
-      <div class="my-10">
+      <div
+      x-init="
+        Livewire.on('editProfileWasClosed',()=> { isOpen = true})
+        Livewire.on('profileWasUpdated',()=> { isOpen = true})
+        "
+      x-data="{isOpen:true}"
+      x-show="isOpen"
+      @custom-show-edit-profile-modal.window="
+        isOpen = false
+        "
+      class="my-10">
           {{$ideas->links()}}
       </div>
 </div>

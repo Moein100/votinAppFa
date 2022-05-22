@@ -111,7 +111,7 @@
                         </div>
                         <div class="my-1">
                             <label for="link2" class="block text-sm font-medium text-gray-700"> لینک  </label>
-                            <input type="text" id="link2" name="link" class="shadow-sm  focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" value="{{old('link',$url)}}">
+                            <input type="text" id="link2" name="url" class="shadow-sm  focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" value="{{old('url',$url)}}">
                         </div>
                       </div>
           

@@ -12,8 +12,8 @@ class AdminAdsController extends Controller
     public function index()
     {
 
-        $image=Ads::find(1)->image;
-        $url=Ads::find(1)->url;
+        $image=Ads::latest()->first()?->image;
+        $url=Ads::latest()->first()?->url;
         
         return view('admin.ads',
             ['image' => $image,
@@ -32,19 +32,50 @@ class AdminAdsController extends Controller
         $validated = $request->validate([
             'image' => ['required_without:url_image'],
             'url_image' => ['required_without:image'],
-            'link' => 'required',
+            'url' => 'required',
         ]);
+
+        //before
+    //     // dd(request()->file('image'));
+    //    if(request()->file('image'))
+    //    {
         
-        // dd(request()->file('image'));
-       if(request()->file('image'))
-       {
-        
-        $previousImage=Ads::find(1)->image;
+    //     $previousImage=Ads::find(1)->image;
     
-       if(file_exists(public_path('/app/'.$previousImage)))
+    //    if(file_exists(public_path('/app/'.$previousImage)))
+    //    {
+    //         unlink(public_path('/app/'.$previousImage));
+    //    }
+    //    $validated['image']=request()->file('image')->storeAs('ads','adsimage.'.explode("/",request()->file('image')->getMimeType())[1]);
+    //    }
+    //    else
+    //    {
+    //     $validated['image']=$validated['url_image'];
+    //    }
+       
+    //    $ads=Ads::find(1);
+    //    $ads->image=$validated['image'];
+    //    $ads->url=$validated['url'];
+    //    $ads->save();
+    //    return redirect('/');
+
+
+
+    //after
+
+
+    $previousAd=Ads::latest()->first();
+    $previousAd?->delete();
+
+    if(request()->file('image'))
        {
-            unlink(public_path('/app/'.$previousImage));
-       }
+        
+    //     $previousImage=Ads::find($previousAd->id)->image;
+    
+    //    if(file_exists(public_path('/app/'.$previousImage)))
+    //    {
+    //         unlink(public_path('/app/'.$previousImage));
+    //    }
        $validated['image']=request()->file('image')->storeAs('ads','adsimage.'.explode("/",request()->file('image')->getMimeType())[1]);
        }
        else
@@ -52,26 +83,32 @@ class AdminAdsController extends Controller
         $validated['image']=$validated['url_image'];
        }
        
-       $ads=Ads::find(1);
-       $ads->image=$validated['image'];
-       $ads->url=$validated['link'];
-       $ads->save();
+       Ads::create($validated);
        return redirect('/');
+
     }
 
 
     public function destroy()
     {
-        $targetAd=Ads::find(1);
+    //     $targetAd=Ads::find(1);
     
-       if(file_exists(public_path('/app/'.$targetAd->image)))
-       {
-            unlink(public_path('/app/'.$targetAd->image));
-       }
+    //    if(file_exists(public_path('/app/'.$targetAd->image)))
+    //    {
+    //         unlink(public_path('/app/'.$targetAd->image));
+    //    }
         
-       $targetAd->image=null;
-       $targetAd->url=null;
-       $targetAd->save();
-       return redirect('/');
+    //    $targetAd->image=null;
+    //    $targetAd->url=null;
+    //    $targetAd->save();
+    //    return redirect('/');
+
+        $targetAd=Ads::latest()->first();
+        if(file_exists(public_path('/app/'.$targetAd->image)))
+        {
+            unlink(public_path('/app/'.$targetAd->image));
+        }
+        $targetAd->delete();
+           return redirect('/');
     }
 }

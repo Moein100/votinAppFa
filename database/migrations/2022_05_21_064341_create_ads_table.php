@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
-            $table->string('url')->nullable();
+            $table->text('image')->nullable();
+            $table->text('url')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

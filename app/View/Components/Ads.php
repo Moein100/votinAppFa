@@ -25,8 +25,8 @@ class Ads extends Component
      */
     public function render()
     {
-        $imageAds=AdsModel::find(1)->image;
-        $urlAds=AdsModel::find(1)->url;
+        $imageAds=AdsModel::latest()->first()?->image;
+        $urlAds=AdsModel::latest()->first()?->url;
         return view('components.ads',[
             'imageAds' => $imageAds,
             'urlAds' => $urlAds
