@@ -87,7 +87,7 @@
 
 
 
-                        <div class="flex items-center mt-4 ml-auto  md:mt-0 md:hidden" dir="ltr">
+                        <div class="flex items-center mt-4 mx-auto  md:mt-0 md:hidden" dir="ltr">
                             <div class="bg-gray-200 text-center rounded-xl h-10 py-2 pl-3 pr-8">
                                 <div class="text-sm font-bold leading-none @if($hasVoted) text-blue-600 @endif ">{{$votesCount}}</div>
                                 <div class="text-xxs font-semibold leading-none text-gray-500">رای</div>

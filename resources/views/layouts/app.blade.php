@@ -34,10 +34,10 @@
                 <div class="flex items-center mt-2 md:mt-0">
                     @admin
                     <div>
-                        <a class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/admin/aboute-us"> ویرایش درباره ما</a>
+                        <a class="hidden sm:inline-block ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/admin/aboute-us"> ویرایش درباره ما</a>
                     </div>
                     <div>
-                        <a class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/admin/ads">تبلیغات</a>
+                        <a class="hidden sm:inline-block ml-4 text-sm text-gray-700 dark:text-gray-500 underline" href="/admin/ads">تبلیغات</a>
                     </div>
                     @endadmin
                     
